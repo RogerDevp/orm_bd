@@ -1,11 +1,14 @@
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost:5000/crud_omr'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://usuario:password@localhost:5000/crud_omr'
 db = SQLAlchemy(app)
+CORS(app)
+
 class Event(db.Model):
     id= db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(100), nullable=False)
