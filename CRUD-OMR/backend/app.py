@@ -4,7 +4,7 @@ from datetime import datetime
 from flask_cors import CORS
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:232063@localhost:5432/crud_omr'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:wp1234@localhost:5432/crud_omr'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 CORS(app)

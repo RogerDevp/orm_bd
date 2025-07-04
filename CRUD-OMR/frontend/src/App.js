@@ -93,31 +93,35 @@ function App() {
       </section>
       <section>
         <ul>
-          {eventsList.map(event => {
-            if (eventId === event.id) {
-              return (
-                <form onSubmit={handleSubmit} key={event.id}>
+          {eventsList.map(event => (
+            <li style={{ display: "flex", gap: "10px", alignItems: "center", justifyContent: "space-between" }} key={event.id}>
+              {eventId === event.id ? (
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexGrow: 1, gap: "10px", alignItems: "center" }}>
                   <input
                     onChange={(e) => handleChange(e, 'edit')}
                     type="text"
                     name="editDescription"
                     id="editDescription"
                     value={editDescription}
+                    style={{ flexGrow: 1 }}
                   />
                   <button type="submit">Guardar</button>
+                  <button onClick={() => setEventId(null)} type="button" style={{ backgroundColor: '#6c757d', color: 'white' }}>Cancelar</button>
                 </form>
-              );
-            } else {
-              return (
-                <li style={{ display: "flex", gap: "10px" }} key={event.id}>
-                  {format(new Date(event.created_at), "MM/dd, p")}: {" "}
-                  {event.description}
-                  <button onClick={() => toggleEdit(event)}>Editar</button>
-                  <button onClick={() => handleDelete(event.id)}>X</button>
-                </li>
-              );
-            }
-          })}
+              ) : (
+                <>
+                  <span style={{ flexGrow: 1, textAlign: 'left' }}>
+                    {format(new Date(event.created_at), "MM/dd, p")}: {" "}
+                    {event.description}
+                  </span>
+                  <div>
+                    <button onClick={() => toggleEdit(event)}>Editar</button>
+                    <button onClick={() => handleDelete(event.id)}>X</button>
+                  </div>
+                </>
+              )}
+            </li>
+          ))}
         </ul>
       </section>
     </div>

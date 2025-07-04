@@ -1,5 +1,160 @@
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  padding: 20px;
+}
+
+.App section:first-of-type {
+  background-color: #36404a;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App section:first-of-type form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.App section:first-of-type label {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  align-self: flex-start;
+  margin-left: calc(50% - 250px);
+}
+
+.App section:first-of-type input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #4a545f;
+  color: white;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.App section:first-of-type input[type="text"]::placeholder {
+  color: #bbb;
+}
+
+.App section:first-of-type button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  width: auto;
+  align-self: flex-end;
+}
+
+.App section:first-of-type button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.App section:last-of-type {
+  background-color: #36404a;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.App section:last-of-type ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.App section:last-of-type li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #4a545f;
+  font-size: 0.95em;
+}
+
+.App section:last-of-type li:last-child {
+  border-bottom: none;
+}
+
+.App section:last-of-type li form {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
+}
+
+.App section:last-of-type li form input[type="text"] {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #4a545f;
+  color: white;
+  font-size: 0.95em;
+}
+
+.App section:last-of-type li form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+  margin: 0;
+  display: inline-block;
+}
+
+.App section:last-of-type li form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.App section:last-of-type li button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+  margin-left: 5px;
+}
+
+.App section:last-of-type li button:nth-of-type(1) {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.App section:last-of-type li button:nth-of-type(1):hover {
+  background-color: #e0a800;
+}
+
+.App section:last-of-type li button:nth-of-type(2) {
+  background-color: #dc3545;
+  color: white;
+}
+
+.App section:last-of-type li button:nth-of-type(2):hover {
+  background-color: #c82333;
+}
+
+button {
+  display: inline-block;
+  margin: 0;
 }
 
 .App-logo {
@@ -7,25 +162,10 @@
   pointer-events: none;
 }
 
-input, button {
-  display: block;
-  margin: 8px 0;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-section {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
