@@ -5,6 +5,11 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:wp1234@localhost:5432/crud_omr'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://usuario:password@localhost:5000/crud_omr'
+
+
+
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 CORS(app)
